@@ -1,0 +1,45 @@
+* {
+  font-family: Raleway, sans-serif;
+  color: white;
+}
+
+.header {
+  background-color: black;
+  height: 5rem;
+  width: 100%;
+  color: white;
+}
+
+.row {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.injustice {
+  font-size: 37px;
+}
+
+.left-bar-padding {
+  padding-left: 2rem;
+}
+
+.right-bar-padding {
+  padding-right: 2rem;
+}
+
+html {
+  background-color: #1c1c1f;
+  height: 100vh;
+  width: 100%;
+}
+
+.character-img {
+  max-width: 30%;
+}
