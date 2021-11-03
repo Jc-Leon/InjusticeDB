@@ -1,12 +1,13 @@
 import React from 'react';
-import Characters from '../components/view-characters';
 
 export default function Home(props) {
   return (
 
-    <div className='background' >
-        <Characters/>
-    </div>
+    <div>
+      <div className='row justify-center'>
+        <h2>Characters</h2>
+      </div>
+          </div>
 
   );
 }
