@@ -1,0 +1,80 @@
+* {
+  font-family: Raleway, sans-serif;
+  color: white;
+}
+
+.header {
+  background-color: black;
+  height: 5rem;
+  width: 100%;
+  color: white;
+}
+
+.row {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.injustice,
+i {
+  font-size: 16px;
+}
+
+.left-bar-padding {
+  padding-left: 1rem;
+}
+
+.right-bar-padding {
+  padding-right: 1rem;
+}
+
+html {
+  background-color: #1c1c1f;
+  height: 100vh;
+  width: 100%;
+}
+
+img {
+  height: 300px;
+  width: 300px;
+  object-fit: contain;
+}
+
+@media only screen and (min-width: 1162px) {
+  .injustice,
+  i {
+    font-size: 30px;
+  }
+
+  .roster-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cards {
+    flex-basis: 33%;
+  }
+
+  .name {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cardimg {
+    display: flex;
+    justify-content: center;
+  }
+}
