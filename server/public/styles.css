@@ -26,16 +26,17 @@
   align-items: center;
 }
 
-.injustice {
-  font-size: 37px;
+.injustice,
+i {
+  font-size: 16px;
 }
 
 .left-bar-padding {
-  padding-left: 2rem;
+  padding-left: 1rem;
 }
 
 .right-bar-padding {
-  padding-right: 2rem;
+  padding-right: 1rem;
 }
 
 html {
@@ -44,8 +45,36 @@ html {
   width: 100%;
 }
 
-.character-img {
+img {
   height: 300px;
   width: 300px;
   object-fit: contain;
+}
+
+@media only screen and (min-width: 1162px) {
+  .injustice,
+  i {
+    font-size: 30px;
+  }
+
+  .roster-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cards {
+    flex-basis: 33%;
+  }
+
+  .name {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cardimg {
+    display: flex;
+    justify-content: center;
+  }
 }
