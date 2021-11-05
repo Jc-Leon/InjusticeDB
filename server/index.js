@@ -16,11 +16,29 @@ const app = express();
 app.use(staticMiddleware);
 
 app.get('/api/characters', (req, res, next) => {
-  const sql = `select "name", "imageUrl"
+  const sql = `select "name", "imageUrl","characterId"
               from "characters" `;
   db.query(sql)
     .then(result => {
       res.json(result.rows);
+    })
+    .catch(err => next(err));
+});
+
+app.get('/api/characters/:characterId', (req, res, next) => {
+  const characterId = parseInt(req.params.characterId, 10);
+  const sql = `
+    select "characters"."name" as "characterName","characters"."imageUrl" as "characterImage", json_agg("moves") as "moves"
+      from "characters"
+      left join "moves" using ("characterId")
+      left join "moveCategories" using ("moveCategoryId")
+    where "characterId" = $1
+    group by "characterId"
+  `;
+  const params = [characterId];
+  db.query(sql, params)
+    .then(result => {
+      res.json(result.rows[0]);
     })
     .catch(err => next(err));
 });

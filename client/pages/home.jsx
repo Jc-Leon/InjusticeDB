@@ -24,20 +24,19 @@ export default class Character extends React.Component {
       </div>
     </div>
 
-      <div className="roster-container">
+      <div className="row justify-center flex-wrap">
         {this.state.characters.map(characters => (
-          <div className="cards" key={characters.name}>
-            <div className="row justify-center name">
+          <div className="cards" key={characters.characterId}>
+            <div className="row justify-center full">
               <h3>{characters.name}</h3>
             </div>
-            <div className="row justify-center cardimg">
-              <img className=" " src={characters.imageUrl} alt="" />
+            <div className="row justify-center">
+              <a href={`#characters?characterId=${characters.characterId}`}><img className=" " src={characters.imageUrl} alt="" /></a>
             </div>
           </div>
         ))}
       </div>
 </>
     );
-
   }
 }
