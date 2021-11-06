@@ -16,27 +16,33 @@ export default class Character extends React.Component {
   }
 
   render() {
+
     return (
       <>
-          <div>
-      <div className="row justify-center">
-        <h2>Characters</h2>
-      </div>
-    </div>
-
-      <div className="row justify-center flex-wrap">
-        {this.state.characters.map(characters => (
-          <div className="cards" key={characters.characterId}>
-            <div className="row justify-center full">
-              <h3>{characters.name}</h3>
-            </div>
-            <div className="row justify-center">
-              <a href={`#characters?characterId=${characters.characterId}`}><img className=" " src={characters.imageUrl} alt="" /></a>
-            </div>
+        <div>
+          <div className="row justify-center">
+            <h2>Characters</h2>
           </div>
-        ))}
-      </div>
-</>
+        </div>
+
+        <div className="row justify-center flex-wrap">
+          {this.state.characters.map(characters => (
+            <div className="cards" key={characters.characterId}>
+              <div className="row justify-center full">
+                <h3>{characters.name}</h3>
+              </div>
+              <div className="row justify-center">
+                <a
+                  onClick={() => window.scrollTo({ top: 0 })}
+                  href={`#characters?characterId=${characters.characterId}`}
+                >
+                  <img className=" " src={characters.imageUrl} alt="" />
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </>
     );
   }
 }

@@ -3,6 +3,7 @@ import Home from './pages/home';
 import Header from './components/header';
 import MoveList from './pages/character-move-page';
 import parseRoute from './lib/parse-route';
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
