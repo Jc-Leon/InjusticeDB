@@ -26,12 +26,20 @@
   justify-content: center;
 }
 
+.justify-around {
+  justify-content: space-around;
+}
+
 .align-center {
   align-items: center;
 }
 
 .align-start {
   align-items: flex-start;
+}
+
+.text-align {
+  text-align: center;
 }
 
 .injustice,
@@ -81,26 +89,46 @@ img {
   margin: 0 0.5rem;
 }
 
+.move-list:hover {
+  cursor: pointer;
+}
+
 .move-category {
   height: 1.5rem;
 }
 
-/* @media only screen and (min-width: 767px) {
-  .column-half {
-    flex-basis: 50%;
-  }
+.data-header {
+  background-color: #2f424d;
+  height: 1.5rem;
+}
 
-  .cardimg {
-    height: 490px;
-    width: 456px;
-    object-fit: contain;
-  }
+h4,
+h5 {
+  margin: 0%;
+}
 
-  .injustice,
-  i {
-    font-size: 36px;
-  }
-} */
+h4 {
+  width: 7rem;
+  text-align: center;
+}
+
+.move-type {
+  background-color: #171e26;
+  padding: 0 10px;
+}
+
+.frame-data {
+  background-color: #2b3242;
+  padding: 0 10px;
+}
+
+.color {
+  background-color: red;
+}
+
+.row-height {
+  height: 1.7rem;
+}
 
 @media only screen and (min-width: 1200px) {
   .injustice,
