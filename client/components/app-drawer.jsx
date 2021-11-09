@@ -23,7 +23,7 @@ export default class Drawer extends React.Component {
           className={isClicked ? 'blackout' : 'blackout hidden'}
         ></div>
         <div className={isClicked ? 'sidebar' : 'sidebar hidden'}>
-          <a href="">
+          <a href="#">
             <p onClick={this.handleClick}>View Characters</p>
           </a>
           <a href="">
