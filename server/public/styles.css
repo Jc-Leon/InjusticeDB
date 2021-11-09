@@ -38,8 +38,20 @@
   align-items: flex-start;
 }
 
+.align-self {
+  align-self: center;
+}
+
 .text-align {
   text-align: center;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+
+.flex-end {
+  justify-content: flex-end;
 }
 
 .injustice,
@@ -175,6 +187,33 @@ p:hover {
 
 i {
   cursor: pointer;
+}
+
+.form-border {
+  width: 294px;
+  border: white 1px solid;
+  background-color: black;
+}
+
+.name-label {
+  width: 242px;
+}
+
+input,
+select {
+  background-color: #2b3242;
+  border: none;
+  text-decoration: none;
+  outline: none;
+}
+
+.form-data select,
+.form-data input {
+  width: 175px;
+}
+
+.submit-data {
+  margin: 1rem 3.6rem;
 }
 
 @media only screen and (min-width: 1200px) {
