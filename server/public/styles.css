@@ -86,7 +86,6 @@ img {
 
 .move-list {
   height: 2rem;
-  margin: 0 0.5rem;
 }
 
 .move-list:hover {
@@ -128,6 +127,54 @@ h4 {
 
 .row-height {
   height: 1.7rem;
+}
+
+.frame-table {
+  transition: height 0.5s ease-in-out;
+  height: 217.5px;
+  overflow: scroll;
+}
+
+.frame-table-hidden {
+  transition: height 0.5s ease-in-out;
+  height: 0;
+  overflow: scroll;
+}
+
+.sidebar {
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: black;
+  width: 250px;
+  height: 100vh;
+}
+
+.blackout {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.padding-left {
+  padding-left: 1rem;
+}
+
+p {
+  line-height: 3rem;
+  padding-left: 1rem;
+  cursor: pointer;
+  color: white;
+}
+
+p:hover {
+  background-color: rgb(255 255 255 / 50%);
+}
+
+i {
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 1200px) {
