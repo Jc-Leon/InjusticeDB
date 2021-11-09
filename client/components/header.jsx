@@ -1,9 +1,10 @@
 import React from 'react';
+import Drawer from './app-drawer';
 
 export default function Header(props) {
   return (
     <div className="header row justify-between align-center header-padding">
-      <i className="fas fa-bars"></i>
+      <Drawer />
       <div className="injustice">InjusticeDB</div>
     </div>
   );
