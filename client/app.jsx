@@ -15,7 +15,6 @@ export default class App extends React.Component {
   componentDidMount() {
     window.addEventListener('hashchange', () => {
       this.setState({ route: parseRoute(window.location.hash) });
-
     });
   }
 
@@ -34,7 +33,7 @@ export default class App extends React.Component {
     return (
       <>
         <Header />
-        { this.renderPage() }
+        {this.renderPage()}
       </>
     );
   }
