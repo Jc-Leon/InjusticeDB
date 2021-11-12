@@ -1,16 +1,19 @@
 import React from 'react';
 import { ClapSpinner } from 'react-spinners-kit';
 import Frame from '../components/frame-data';
+import Header from '../components/header';
 
 export default class MoveList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      character: {},
+      character: { moves: [] },
       isLoading: true,
       dataView: ''
     };
     this.accordion = this.accordion.bind(this);
+    this.updateMove = this.updateMove.bind(this
+    );
   }
 
   componentDidMount() {
@@ -24,11 +27,22 @@ export default class MoveList extends React.Component {
     this.setState({ dataView });
   }
 
+  updateMove() {
+    fetch(`/api/characters/${this.props.characterId}`)
+      .then(response => response.json())
+      .then(character => this.setState({ character, isLoading: false }))
+      .catch(err => console.error(err));
+
+  }
+
   render() {
     const { isLoading, character } = this.state;
-
     return (
+
       <>
+        {!isLoading && (
+          <Header updateMove={this.updateMove} character={this.state.character}/>
+        )}
         {isLoading && (
           <ClapSpinner size={30} color="#00ff89" loading={isLoading} />
         )}
@@ -58,7 +72,7 @@ export default class MoveList extends React.Component {
                       <Frame
                         dataView={this.state.dataView}
                         view={this.accordion}
-                        key={move.id}
+                        key={move.moveId}
                         move={move}
                       />
                     ))}
@@ -71,7 +85,7 @@ export default class MoveList extends React.Component {
                       <Frame
                         dataView={this.state.dataView}
                         view={this.accordion}
-                        key={move.id}
+                        key={move.moveId}
                         move={move}
                       />
                     ))}
@@ -84,7 +98,7 @@ export default class MoveList extends React.Component {
                       <Frame
                         dataView={this.state.dataView}
                         view={this.accordion}
-                        key={move.id}
+                        key={move.moveId}
                         move={move}
                       />
                     ))}
@@ -97,12 +111,12 @@ export default class MoveList extends React.Component {
                       <Frame
                         dataView={this.state.dataView}
                         view={this.accordion}
-                        key={move.id}
+                        key={move.moveId}
                         move={move}
                       />
                     ))}
                 </>
-              )}
+              ) }
             </div>
           </div>
         </div>

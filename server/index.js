@@ -43,6 +43,50 @@ app.get('/api/characters/:characterId', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.use(express.json());
+
+app.post('/api/moves/', (req, res, next) => {
+  const {
+    characterId,
+    moveCategoryId,
+    name,
+    input,
+    moveType,
+    damage,
+    blockDamage,
+    startUp,
+    active,
+    recover,
+    blockAdv,
+    hitAdv,
+    cancel
+  } = req.body;
+  const sql = `
+insert into "moves" ("characterId", "moveCategoryId", "name", "input", "moveType", "damage","blockDamage", "startUp", "active","recover","blockAdv", "hitAdv","cancel" )
+values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
+  `;
+  const params = [
+    characterId,
+    moveCategoryId,
+    name,
+    input,
+    moveType,
+    damage,
+    blockDamage,
+    startUp,
+    active,
+    recover,
+    blockAdv,
+    hitAdv,
+    cancel
+  ];
+  db.query(sql, params)
+    .then(result => {
+      res.json(result.rows[0]);
+    })
+    .catch(err => next(err));
+});
+
 app.use(errorMiddleware);
 
 app.listen(process.env.PORT, () => {
