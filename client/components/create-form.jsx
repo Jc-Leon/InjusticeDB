@@ -43,19 +43,22 @@ export default class Create extends React.Component {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
-    })
-      .then(() => {
-        if (this.props.updateMove) {
-          this.props.updateMove();
-        }
-        this.props.handleClick(event);
-      });
-
+    }).then(() => {
+      if (this.props.updateMove) {
+        this.props.updateMove();
+      }
+      this.props.handleClick(event);
+    });
   }
 
   render() {
     return (
-      <form className=" form create-form row justify-center align-self" action="" onSubmit={this.handleSubmit} name="create" >
+      <form
+        className=" form create-form row justify-center align-self"
+        action=""
+        onSubmit={this.handleSubmit}
+        name="create"
+      >
         <div className="relative">
           <div onClick={this.props.handleClick} className="equis">
             <i className="fas fa-times" name="create"></i>
@@ -84,7 +87,7 @@ export default class Create extends React.Component {
               ))}
             </select>
           </div>
-          <div className="form-data row flex-direction-column align-center text-align" >
+          <div className="form-data row flex-direction-column align-center text-align">
             <label htmlFor="categoryId">Move Category</label>
             <select
               className="text-align"
@@ -108,7 +111,8 @@ export default class Create extends React.Component {
             </select>
             <div className="row flex-direction-column">
               <label htmlFor="move-name">Move Name:</label>
-              <input required
+              <input
+                required
                 className="text-align"
                 onChange={this.handleChange}
                 name="name"
@@ -117,7 +121,8 @@ export default class Create extends React.Component {
             </div>
             <div className="row flex-direction-column">
               <label htmlFor="input">Input:</label>
-              <input required
+              <input
+                required
                 className="text-align"
                 onChange={this.handleChange}
                 name="input"
@@ -126,7 +131,8 @@ export default class Create extends React.Component {
             </div>
             <div className="row flex-direction-column">
               <label htmlFor="move-type">Move Type:</label>
-              <input required
+              <input
+                required
                 className="text-align"
                 onChange={this.handleChange}
                 name="moveType"
@@ -135,7 +141,8 @@ export default class Create extends React.Component {
             </div>
             <div className="row flex-direction-column">
               <label htmlFor="damage">Damage:</label>
-              <input required
+              <input
+                required
                 className="text-align"
                 onChange={this.handleChange}
                 name="damage"
@@ -144,7 +151,8 @@ export default class Create extends React.Component {
             </div>
             <div className="row flex-direction-column">
               <label htmlFor="block-damage">Block Damage:</label>
-              <input required
+              <input
+                required
                 className="text-align"
                 onChange={this.handleChange}
                 name="blockDamage"
@@ -153,7 +161,8 @@ export default class Create extends React.Component {
             </div>
             <div className="row flex-direction-column">
               <label htmlFor="start-up">Start-Up:</label>
-              <input required
+              <input
+                required
                 className="text-align"
                 onChange={this.handleChange}
                 name="startUp"
@@ -162,7 +171,8 @@ export default class Create extends React.Component {
             </div>
             <div className="row flex-direction-column">
               <label htmlFor="recover">Active:</label>
-              <input required
+              <input
+                required
                 className="text-align"
                 onChange={this.handleChange}
                 name="active"
@@ -171,7 +181,8 @@ export default class Create extends React.Component {
             </div>
             <div className="row flex-direction-column">
               <label htmlFor="recover">Recover:</label>
-              <input required
+              <input
+                required
                 className="text-align"
                 onChange={this.handleChange}
                 name="recover"
@@ -180,7 +191,8 @@ export default class Create extends React.Component {
             </div>
             <div className="row flex-direction-column">
               <label htmlFor="block-adv">Block Adv:</label>
-              <input required
+              <input
+                required
                 className="text-align"
                 onChange={this.handleChange}
                 name="blockAdv"
@@ -189,7 +201,8 @@ export default class Create extends React.Component {
             </div>
             <div className="row flex-direction-column">
               <label htmlFor="hit-adv">Hit Adv:</label>
-              <input required
+              <input
+                required
                 className="text-align"
                 onChange={this.handleChange}
                 name="hitAdv"
@@ -198,7 +211,8 @@ export default class Create extends React.Component {
             </div>
             <div className="row flex-direction-column">
               <label htmlFor="cancel">Cancel:</label>
-              <input required
+              <input
+                required
                 className="text-align"
                 onChange={this.handleChange}
                 name="cancel"

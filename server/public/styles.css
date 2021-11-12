@@ -241,6 +241,11 @@ a {
   text-decoration: none;
 }
 
+input::placeholder {
+  color: white;
+  font-size: 12px;
+}
+
 @media only screen and (min-width: 1200px) {
   .injustice,
   i {
