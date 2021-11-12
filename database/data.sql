@@ -3,7 +3,7 @@ values ('Aquaman','/images/characters/aquaman.png'),( 'Atom','/images/characters
 returning *;
 
 insert into "moves" ("characterId", "moveCategoryId", "name", "input", "moveType", "damage","blockDamage", "startUp", "active","recover","blockAdv", "hitAdv","cancel" )
-values ('','','','','','','','',''.'','','','')
+values ('','','','','','','','','','','','','')
 returning *;
 
 select "characters"."name" as "characterName","characters"."imageUrl" as "characterImage", json_agg("moves")

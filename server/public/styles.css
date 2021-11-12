@@ -216,6 +216,31 @@ select {
   margin: 1rem 3.6rem;
 }
 
+.form {
+  position: fixed;
+  top: 86px;
+  left: 0;
+  right: 0;
+}
+
+.equis {
+  position: absolute;
+  top: 2px;
+  left: 5px;
+}
+
+.equis i {
+  font-size: 30px;
+}
+
+.relative {
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+}
+
 @media only screen and (min-width: 1200px) {
   .injustice,
   i {

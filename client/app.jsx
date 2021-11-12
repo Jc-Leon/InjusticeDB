@@ -8,7 +8,8 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      route: parseRoute(window.location.hash)
+      route: parseRoute(window.location.hash),
+      formIsOpen: false
     };
   }
 
@@ -21,7 +22,10 @@ export default class App extends React.Component {
   renderPage() {
     const { route } = this.state;
     if (route.path === '') {
-      return <Home />;
+      return <>
+      <Header/>
+        <Home />;
+          </>;
     }
     if (route.path === 'characters') {
       const characterId = route.params.get('characterId');
@@ -32,7 +36,6 @@ export default class App extends React.Component {
   render() {
     return (
       <>
-        <Header />
         {this.renderPage()}
       </>
     );
