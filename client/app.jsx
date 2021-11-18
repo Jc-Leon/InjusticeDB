@@ -24,7 +24,7 @@ export default class App extends React.Component {
     if (route.path === '') {
       return (
         <>
-          <Header />
+          <Header/>
           <Home />;
         </>
       );

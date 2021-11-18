@@ -34,7 +34,9 @@ export default class MoveList extends React.Component {
   }
 
   render() {
+
     const { isLoading, character } = this.state;
+
     return (
       <>
         {!isLoading && (

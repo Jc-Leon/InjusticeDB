@@ -35,7 +35,7 @@ export default class Character extends React.Component {
                   onClick={() => window.scrollTo({ top: 0 })}
                   href={`#characters?characterId=${characters.characterId}`}
                 >
-                  <img className=" " src={characters.imageUrl} alt="" />
+                  <img className="" src={characters.imageUrl} alt="" />
                 </a>
               </div>
             </div>
