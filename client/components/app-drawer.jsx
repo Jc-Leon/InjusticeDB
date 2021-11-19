@@ -1,5 +1,6 @@
 import React from 'react';
 import Create from './create-form';
+import Delete from './delete-form';
 
 export default class Drawer extends React.Component {
   constructor(props) {
@@ -10,7 +11,10 @@ export default class Drawer extends React.Component {
 
   handleClick(e) {
     const name = e.target.getAttribute('name');
-    if (e.target.className !== 'fas fa-times' && !e.target.className.includes('create-form')) {
+    if (
+      e.target.className !== 'fas fa-times' &&
+      !e.target.className.includes('create-form') && !e.target.className.includes('remove-form')
+    ) {
       this.setState({ isClicked: !this.state.isClicked }, () => {
         if (name !== null && !this.state[name]) {
           this.setState({ [name]: true });
@@ -28,7 +32,7 @@ export default class Drawer extends React.Component {
   }
 
   render() {
-    const { isClicked, create } = this.state;
+    const { isClicked, create, remove } = this.state;
     return (
       <>
         <div className="menu">
@@ -60,8 +64,8 @@ export default class Drawer extends React.Component {
                 Update Move Set
               </p>
             </a>
-            <a href="">
-              <p onClick={this.handleClick} name="delete">
+            <a>
+              <p onClick={this.handleClick} name="remove">
                 Delete Move Set
               </p>
             </a>
@@ -72,7 +76,20 @@ export default class Drawer extends React.Component {
             </a>
           </div>
         </div>
-        {create && <Create handleClick={this.handleClick} updateMove={this.props.updateMove} character={this.props.character}/>}
+        {create && (
+          <Create
+            handleClick={this.handleClick}
+            updateMove={this.props.updateMove}
+            character={this.props.character}
+          />
+        )}
+        {remove && (
+          <Delete
+            handleClick={this.handleClick}
+            updateMove={this.props.updateMove}
+            character={this.props.character}
+          />
+        )}
       </>
     );
   }

@@ -22,6 +22,7 @@ export default class Frame extends React.Component {
   render() {
     const { move } = this.props;
     const isClicked = this.state.dataView;
+
     return (
       <>
         <div
@@ -57,7 +58,7 @@ export default class Frame extends React.Component {
             <h4>Frame Data:</h4>
           </div>
           <div className="move-type row justify-between align-center row-height ">
-            <h4>Start-up</h4>
+            <h4>Start-Up</h4>
             <h4>Active:</h4>
             <h4>Recover:</h4>
           </div>

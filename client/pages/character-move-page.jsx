@@ -12,8 +12,7 @@ export default class MoveList extends React.Component {
       dataView: ''
     };
     this.accordion = this.accordion.bind(this);
-    this.updateMove = this.updateMove.bind(this
-    );
+    this.updateMove = this.updateMove.bind(this);
   }
 
   componentDidMount() {
@@ -32,16 +31,19 @@ export default class MoveList extends React.Component {
       .then(response => response.json())
       .then(character => this.setState({ character, isLoading: false }))
       .catch(err => console.error(err));
-
   }
 
   render() {
-    const { isLoading, character } = this.state;
-    return (
 
+    const { isLoading, character } = this.state;
+
+    return (
       <>
         {!isLoading && (
-          <Header updateMove={this.updateMove} character={this.state.character}/>
+          <Header
+            updateMove={this.updateMove}
+            character={this.state.character}
+          />
         )}
         {isLoading && (
           <ClapSpinner size={30} color="#00ff89" loading={isLoading} />
@@ -116,7 +118,7 @@ export default class MoveList extends React.Component {
                       />
                     ))}
                 </>
-              ) }
+              )}
             </div>
           </div>
         </div>

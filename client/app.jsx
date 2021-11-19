@@ -22,10 +22,12 @@ export default class App extends React.Component {
   renderPage() {
     const { route } = this.state;
     if (route.path === '') {
-      return <>
-      <Header/>
-        <Home />;
-          </>;
+      return (
+        <>
+          <Header/>
+          <Home />;
+        </>
+      );
     }
     if (route.path === 'characters') {
       const characterId = route.params.get('characterId');
@@ -34,10 +36,6 @@ export default class App extends React.Component {
   }
 
   render() {
-    return (
-      <>
-        {this.renderPage()}
-      </>
-    );
+    return <>{this.renderPage()}</>;
   }
 }

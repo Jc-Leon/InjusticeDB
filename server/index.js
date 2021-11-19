@@ -86,7 +86,20 @@ values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
     })
     .catch(err => next(err));
 });
-
+app.delete('/api/moves/', (req, res, next) => {
+  const { characterId, name } = req.body;
+  const sql = `
+delete from "moves"
+ where "characterId" = $1
+   and "name" = $2
+  `;
+  const params = [characterId, name];
+  db.query(sql, params)
+    .then(result => {
+      res.json(result.rows[0]);
+    })
+    .catch(err => next(err));
+});
 app.use(errorMiddleware);
 
 app.listen(process.env.PORT, () => {
