@@ -4,12 +4,16 @@ const errorMiddleware = require('./error-middleware');
 const staticMiddleware = require('./static-middleware');
 const pg = require('pg');
 
-const db = new pg.Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false
-  }
-});
+const DB_CONFIG = {
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DEV_SERVER_PORT,
+  region: process.env.DB_REGION
+};
+
+const db = new pg.Pool(DB_CONFIG);
 
 const app = express();
 

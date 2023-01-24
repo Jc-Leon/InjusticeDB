@@ -1,12 +1,4 @@
-set client_min_messages to warning;
-
--- DANGER: this is NOT how to do it in the real world.
--- `drop schema` INSTANTLY ERASES EVERYTHING.
-drop schema "public" cascade;
-
-create schema "public";
-
-CREATE TABLE "public"."characters" (
+CREATE TABLE "characters" (
 	"characterId" serial NOT NULL,
 	"name" TEXT NOT NULL,
 	"createdAt" timestamptz NOT NULL default now(),
@@ -18,7 +10,7 @@ CREATE TABLE "public"."characters" (
 
 
 
-CREATE TABLE "public"."moveCategories" (
+CREATE TABLE "moveCategories" (
 	"moveCategoryId" serial NOT NULL,
 	"name" TEXT NOT NULL,
 	CONSTRAINT "moveCategories_pk" PRIMARY KEY ("moveCategoryId")
@@ -28,7 +20,7 @@ CREATE TABLE "public"."moveCategories" (
 
 
 
-CREATE TABLE "public"."moves" (
+CREATE TABLE "moves" (
 	"moveId" serial NOT NULL,
 	"characterId" integer NOT NULL,
 	"moveCategoryId" integer NOT NULL,
